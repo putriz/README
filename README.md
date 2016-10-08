@@ -12,9 +12,9 @@ README aims to help authors create pictures to go along with their stories by ta
 
 README has the potential to address many problems in society in a number of different ways, such as:
 
-Motivation for kids to write more often
-Helps in learning a new language
-Helping those with aphantasia get the visuals they are unable to produce themselves
-Saving time for readers by giving pictures of words they may not know
-Aids with word definitions in online dictionaries
+- Motivation for kids to write more often
+- Helps in learning a new language
+- Helping those with aphantasia get the visuals they are unable to produce themselves
+- Saving time for readers by giving pictures of words they may not know
+- Aids with word definitions in online dictionaries
 
