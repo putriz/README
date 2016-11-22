@@ -4,13 +4,13 @@ import imageGenerator.Circle;
 import parser.Parser;
 import processing.core.PApplet;
 
-public class Main extends PApplet{
+public class Main extends PApplet {
 
     private Parser parser;
     private Circle circle;
 
     public void settings() {
-        size(200,200);
+        size(400,400);
     }
 
     public void setup() {

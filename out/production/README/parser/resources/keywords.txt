@@ -1,0 +1,17 @@
+circle
+triangle
+rectangle
+square
+trapezoid
+sun
+moon
+sky
+dark
+light
+night
+day
+sky
+ocean
+sea
+house
+people
