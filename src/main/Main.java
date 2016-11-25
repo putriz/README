@@ -1,13 +1,13 @@
 package main;
 
-import imageGenerator.Circle;
+import imageGenerator.Sketcher;
 import parser.Parser;
 import processing.core.PApplet;
 
 public class Main extends PApplet {
 
     private Parser parser;
-    private Circle circle;
+    private Sketcher sketcher;
 
     public void settings() {
         size(400,400);
@@ -16,12 +16,12 @@ public class Main extends PApplet {
     public void setup() {
         parser = new Parser();
         parser.askInput();
-        circle = new Circle(this);
+        sketcher = new Sketcher(this,parser.parse());
     }
 
     public void draw() {
         background(255);
-        circle.drawCircle();
+        sketcher.sketch();
     }
 
     /**

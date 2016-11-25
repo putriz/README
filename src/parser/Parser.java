@@ -3,6 +3,7 @@ package parser;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -14,6 +15,10 @@ public class Parser {
 
     private String text;
     private ArrayList<String> keywords = new ArrayList<>();
+
+    // this is the map to hold the identified images to draw
+    // from the input text and the positions
+    private HashMap<String,ArrayList<Float>> images = new HashMap<>();
 
     public Parser() {
         initKeywords();
@@ -49,6 +54,21 @@ public class Parser {
         text = user_input.nextLine();
 
         System.out.println(text);
+    }
+
+    /**
+     * @return the HashMap images filled with shapes to draw
+     *         and the coordinates they will hold
+     *         For example,
+     *         "triangle": [x1, y1, x2, y2, x3, y3]
+     *         "circle": [a, b, c, d]
+     */
+    public HashMap<String,ArrayList<Float>> parse() {
+        // TODO:
+        // the parse function that does all the parsing stuff
+        // put stuff into the images HashMap
+
+        return images;
     }
 
 }

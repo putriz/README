@@ -2,24 +2,47 @@ package imageGenerator;
 
 import processing.core.PApplet;
 
-/**
- * One of the shapes
- */
-public class Circle {
+import java.util.ArrayList;
+
+class Circle {
 
     private PApplet pApplet;
+    private ArrayList<Float> coordinates = new ArrayList<>();
 
-    public Circle(PApplet pApplet) {
+    private ArrayList<Float> defaultCoordinates = new ArrayList<>();
+
+    public Circle(PApplet pApplet, ArrayList<Float> coordinates) {
         this.pApplet = pApplet;
+        this.coordinates = coordinates;
+
+        initDefaultCoordinates();
+    }
+
+    private void initDefaultCoordinates() {
+        defaultCoordinates.add((float) pApplet.width/3);
+        defaultCoordinates.add((float) pApplet.height/3);
+        defaultCoordinates.add((float) 50);
+        defaultCoordinates.add((float) 50);
     }
 
     /**
-     * Currently doesn't actually draw a circle
+     * Draws a circle
      */
     public void drawCircle() {
         pApplet.stroke(0);
         pApplet.fill(255,255,0);
-        pApplet.rect(pApplet.width/3, pApplet.height/3,100,5);
+
+        if (coordinates.size() != 4) {
+            System.out.println("WARNING: not enough coordinates" +
+                    "to specify a circle. Using default coordinates to draw");
+            pApplet.ellipse(defaultCoordinates.get(0),defaultCoordinates.get(1),
+                    defaultCoordinates.get(2),defaultCoordinates.get(3));
+        }
+        else {
+            pApplet.ellipse(coordinates.get(0), coordinates.get(1),
+                    coordinates.get(2), coordinates.get(3));
+        }
+
     }
 
 }
