@@ -14,6 +14,18 @@ public class Rectangle {
 
     private ArrayList<Tuple<Float,Float>> defCoord = new ArrayList<>();
 
+    public Rectangle(){
+        // right corner x
+        // right upper corner
+        this.defCoord.add(new Tuple(20.0,80.0));
+        // left uppler corner
+        this.defCoord.add(new Tuple(120.0,80.0));
+        // right lower corner
+        this.defCoord.add(new Tuple(20.0,130));
+        // left lower corner
+        this.defCoord.add(new Tuple(120,130));
+    }
+
     public Rectangle(PApplet pApplet, ArrayList<Float> Points) {
         this.pApplet = pApplet;
         if(Points.size()!=8){
@@ -32,25 +44,17 @@ public class Rectangle {
         }
     }
 
-    private void initDefault() {
-        // right corner x
-        // right upper corner
-        defCoord.add(new Tuple(20.0,80.0));
-        // left uppler corner
-        defCoord.add(new Tuple(120.0,80.0));
-        // right lower corner
-        defCoord.add(new Tuple(20.0,130));
-        // left lower corner
-        defCoord.add(new Tuple(120,130));
-    }
-
     /**
      * Draws a triangle.
      */
-    public void drawTriangle() {
+    public void drawRectangle() {
         pApplet.stroke(0);
         pApplet.fill(255,255,0);
-
+        if(points.size()!= 0){
+            pApplet.rect(points.get(0).x,points.get(0).y,60,100);
+        }else{
+            pApplet.rect(defCoord.get(0).x,defCoord.get(0).y,defCoord.get(1).x,defCoord.get(2).y);
+        }
 
     }
 }
