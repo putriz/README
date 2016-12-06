@@ -1,5 +1,6 @@
 package imageGenerator;
 
+import javafx.util.Pair;
 import processing.core.PApplet;
 
 import java.util.ArrayList;
@@ -13,9 +14,9 @@ import java.util.Map;
 public class Sketcher {
 
     private PApplet pApplet;
-    private HashMap<String,ArrayList<Float>> images;
+    private ArrayList<Pair<String,HashMap<String,ArrayList<Float>>>> images;
 
-    public Sketcher(PApplet pApplet, HashMap<String,ArrayList<Float>> images) {
+    public Sketcher(PApplet pApplet, ArrayList<Pair<String,HashMap<String,ArrayList<Float>>>> images) {
         this.pApplet = pApplet;
         this.images = images;
     }
@@ -27,15 +28,17 @@ public class Sketcher {
     public void sketch() {
 
         // iterate through the HashMap images
-        for (Map.Entry<String,ArrayList<Float>> entry : images.entrySet()) {
+        for (Pair<String,HashMap<String,ArrayList<Float>>> entry : images) {
 
             if (entry.getKey().equals("triangle")) {
-                Triangle triangle = new Triangle(pApplet,entry.getValue());
+                HashMap<String,ArrayList<Float>>  imageOptions = entry.getValue();
+                Triangle triangle = new Triangle(pApplet,imageOptions);
                 triangle.drawTriangle();
             }
 
             else if (entry.getKey().equals("circle")) {
-                Circle circle = new Circle(pApplet,entry.getValue());
+                HashMap<String,ArrayList<Float>>  imageOptions = entry.getValue();
+                Circle circle = new Circle(pApplet,imageOptions);
                 circle.drawCircle();
             }
         }
