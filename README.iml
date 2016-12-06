@@ -18,6 +18,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+<<<<<<< HEAD
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
@@ -45,5 +46,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+=======
+>>>>>>> origin/master
   </component>
 </module>
