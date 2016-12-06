@@ -33,8 +33,9 @@ class Circle {
         pApplet.fill(255,255,0);
 
         if (coordinates.size() != 4) {
-            System.out.println("WARNING: not enough coordinates" +
-                    "to specify a circle. Using default coordinates to draw");
+            System.err.println("WARNING: Incorrect number of coordinates " +
+                    "to specify a circle (Expected input is 4: x, y, width, height). " +
+                    "Using default coordinates to draw");
             pApplet.ellipse(defaultCoordinates.get(0),defaultCoordinates.get(1),
                     defaultCoordinates.get(2),defaultCoordinates.get(3));
         }
