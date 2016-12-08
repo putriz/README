@@ -18,3 +18,22 @@ README has the potential to address many problems in society in a number of diff
 - Saving time for readers by giving pictures of words they may not know
 - Aids with word definitions in online dictionaries
 
+# How to get started
+
+## Step 1: Preliminary things
+Make sure to have these things installed in your machine: Java IDE (we use IntelliJ and have only tested our code on IntelliJ), and Processing 3. 
+
+## Step 2: README code
+Clone the repo
+
+## Step 3: Setting up project
+Open up IntelliJ. Go to File -> New -> Project. Make sure to use Java version > 1.8 for the SDK. Click 'next' until you see 'Project name' and 'Project location'. For the 'Project location', enter the path of the cloned repo. Click Finish. Now you should have the project set up in IntelliJ.
+
+## Step 4: Use Processing library
+Include Processing core.jar as an external library. Go to File -> Project Structure -> Libraries. Click the green plus button on the left and add your processing core.jar (should be in wherever your Processing 3 is installed). Click 'OK'.
+
+## Step 5: Use pos-tagger library
+Go to File -> Project Structure -> Libraries. Add each of the .jar files in lib (namely slf4-api.jar, slf4-simple.jar, and stanford-postagger.jar to your library (same steps as in Step 4). When you have added all 3, click 'OK'.
+
+## Step 6: Running the code
+Next to the green arrow button (for running code), click on the rectangular button and go to 'Edit Configurations...". Click on the green plus button on the far left and click on 'Application'. For the 'main class' text field, put main.Main. Click 'OK'. Now when you click the green arrow, you should be able to run the program!
