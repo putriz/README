@@ -1,19 +1,23 @@
 package imageGenerator;
 
+import javafx.util.Pair;
 import processing.core.PApplet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 class Circle {
 
     private PApplet pApplet;
     private ArrayList<Float> coordinates = new ArrayList<>();
+    private ArrayList<Float> color = new ArrayList<>();
 
     private ArrayList<Float> defaultCoordinates = new ArrayList<>();
 
-    public Circle(PApplet pApplet, ArrayList<Float> coordinates) {
+    public Circle(PApplet pApplet, HashMap<String,ArrayList<Float>> options) {
         this.pApplet = pApplet;
-        this.coordinates = coordinates;
+        this.coordinates = options.get("coordinates");
+        this.color = options.get("color");
 
         initDefaultCoordinates();
     }
@@ -30,7 +34,12 @@ class Circle {
      */
     public void drawCircle() {
         pApplet.stroke(0);
-        pApplet.fill(255,255,0);
+        if (color != null) {
+            pApplet.fill(color.get(0),color.get(1),color.get(2));
+        } else {
+            pApplet.fill(255,255,0);
+        }
+
 
         if (coordinates.size() != 4) {
             System.err.println("WARNING: Incorrect number of coordinates " +

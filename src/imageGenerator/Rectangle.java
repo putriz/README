@@ -3,6 +3,7 @@ package imageGenerator;
 import processing.core.PApplet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 /**
@@ -11,6 +12,11 @@ import java.util.ArrayList;
 public class Rectangle {
     private PApplet pApplet;
     private ArrayList<Tuple<Float,Float>> points;
+
+    private ArrayList<Float> coordinates;
+    private ArrayList<Float> color;
+
+    private ArrayList<Float> defaultCoordinates = new ArrayList<>();
 
     private ArrayList<Tuple<Float,Float>> defCoord = new ArrayList<>();
 
@@ -24,6 +30,24 @@ public class Rectangle {
         this.defCoord.add(new Tuple(20.0,130));
         // left lower corner
         this.defCoord.add(new Tuple(120,130));
+    }
+
+    public Rectangle(PApplet pApplet, HashMap<String,ArrayList<Float>> options) {
+        this.pApplet = pApplet;
+        this.coordinates = options.get("coordinates");
+        this.color = options.get("color");
+
+        initDefaultCoordinates();
+
+    }
+
+    private void initDefaultCoordinates() {
+        defaultCoordinates.add((float) 30.0);
+        defaultCoordinates.add((float) 75.0);
+        defaultCoordinates.add((float) 58.0);
+        defaultCoordinates.add((float) 20.0);
+        defaultCoordinates.add((float) 86.0);
+        defaultCoordinates.add((float) 75.0);
     }
 
     public Rectangle(PApplet pApplet, ArrayList<Float> Points) {
