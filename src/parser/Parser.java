@@ -102,6 +102,40 @@ public class Parser {
         return images;
     }
 
+    private double getScale(String word){
+        // TODO: have the size output depending on the contextual word used
+        // basically umm...
+        //let's see
+
+        ArrayList<String> words = new ArrayList<>();
+        words.add("tiny");
+        words.add("small");
+        words.add("");
+        words.add("large");
+        words.add("gigantic");
+        int neutral = -1;
+        double index = -1;
+        for(int i = 0; i < words.size(); ++i){
+            if(words.get(i).equalsIgnoreCase(""){
+                neutral = i;
+            }
+            if(words.get(i).equalsIgnoreCase(word)){
+                index = i;
+            }
+        }
+
+        if(index == -1){
+            return -1;
+        }
+        if(index == 0){
+            index = 0.5;
+        }
+
+        return index / neutral;
+        //i stores the location of the neutral/aka not size descriptor string
+        //so basically the scale should be returned as whatever index/neutral goes
+
+    }
     // Determines coordinates of input
     private ArrayList<Float> getCoordinates(String word) {
         // TODO:
