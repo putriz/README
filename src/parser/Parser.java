@@ -81,7 +81,7 @@ public class Parser {
                 descriptive_verbs.add(line);
             }
 
-            bufferedReader=new BufferedReader(new FileReader( "src/parser/resources/position_words"));
+            bufferedReader=new BufferedReader(new FileReader( "src/parser/resources/position_words.txt"));
 
             while ((line=bufferedReader.readLine()) !=null) {
                 position_words.add(line);

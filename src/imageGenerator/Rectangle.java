@@ -6,9 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-/**
- * Created by Jordae4 on 11/25/2016.
- */
 public class Rectangle {
     private PApplet pApplet;
     private ArrayList<Tuple<Float,Float>> points;
