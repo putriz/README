@@ -8,7 +8,6 @@ import java.util.HashMap;
 
 public class Rectangle {
     private PApplet pApplet;
-//    private ArrayList<Tuple<Float,Float>> points;
 
     private ArrayList<Float> coordinates;
     private ArrayList<Float> color;
@@ -43,7 +42,11 @@ public class Rectangle {
      */
     public void drawRectangle() {
         pApplet.stroke(0);
-        pApplet.fill(255,255,0);
+        if (color != null) {
+            pApplet.fill(color.get(0),color.get(1),color.get(2));
+        } else {
+            pApplet.fill(255,255,0);
+        }
 
         if(coordinates.size() != 4){
 //            System.out.println("WARNING: Wrong number of coordinates to" +

@@ -364,6 +364,13 @@ public class Parser {
             case "square": coordinates = new ArrayList<>(Arrays.asList((float) width/4, (float) height/4,
                     (float) height/2, (float) height/2));
                 break;
+            case "house":
+                ArrayList<Float> triangle = getCoordinatesfirst("triangle","top");
+                ArrayList<Float> square = getCoordinatessecond("square","below");
+                coordinates = new ArrayList<>();
+                coordinates.addAll(triangle);
+                coordinates.addAll(square);
+                break;
             default: coordinates = new ArrayList<>();
                 break;
         }
@@ -383,6 +390,9 @@ public class Parser {
             else if (word.equals("arc")) {
                 coordinates= new ArrayList<>(Arrays.asList(new Float(width/2),new Float(height/4),new Float(width/2),new Float(height/2)));
             }
+            else if (word.equals("square")) {
+                coordinates = new ArrayList<>(Arrays.asList((float) width/4, (float) 0, (float) width/2, (float) width/2));
+            }
         }
         else if (position.equals("below") || position.equals("underneath")){
             if (word.equals("circle")) {
@@ -393,6 +403,9 @@ public class Parser {
             }
             else if (word.equals("arc")) {
                 coordinates= new ArrayList<>(Arrays.asList(new Float(width/2),new Float(height/4*3), new Float(width/2),new Float(height/2)));
+            }
+            else if (word.equals("square")) {
+                coordinates = new ArrayList<>(Arrays.asList((float) width/4, (float) height/2, (float) width/2, (float) width/2));
             }
         }
         else if (position.equals("right")){
@@ -450,6 +463,9 @@ public class Parser {
             }
             else if (word.equals("arc")) {
                 coordinates= new ArrayList<>(Arrays.asList(new Float(width/2),new Float(height/4),new Float(width/2),new Float(height/2)));
+            }
+            else if (word.equals("square")) {
+                coordinates = new ArrayList<>(Arrays.asList((float) width/4, (float) height/2, (float) width/2, (float) width/2));
             }
         }
         else if (position.equals("right")){

@@ -53,6 +53,10 @@ public class Sketcher {
                 Square square = new Square(pApplet, imageOptions);
                 square.drawSquare();
             }
+            else if (entry.getKey().equals("house")) {
+                House house = new House(pApplet, imageOptions);
+                house.drawHouse();
+            }
         }
 
 
