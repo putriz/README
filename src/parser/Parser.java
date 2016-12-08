@@ -13,6 +13,7 @@ import edu.stanford.nlp.ling.Sentence;
 import edu.stanford.nlp.ling.TaggedWord;
 import edu.stanford.nlp.ling.HasWord;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
+import edu.stanford.nlp.util.ArrayCoreMap;
 import javafx.util.Pair;
 
 import static processing.javafx.PSurfaceFX.PApplicationFX.surface;
@@ -347,15 +348,21 @@ public class Parser {
 
         ArrayList<Float> coordinates;
         switch (word) {
-            case "triangle": coordinates = new ArrayList<>(Arrays.asList(new Float(width/2),
-                    new Float(height/4), new Float(width/4), new Float((3*height)/4),
-                    new Float((3*width)/4), new Float((3*height)/4)));
+            case "triangle": coordinates = new ArrayList<>(Arrays.asList((float) width/2,
+                    (float) height/4, (float) width/4,(float) (3*height)/4,
+                    (float) (3*width)/4, (float) (3*height)/4));
                 break;
-            case "circle": coordinates = new ArrayList<Float>(Arrays.asList(new Float(width/2),new Float((2*height)/4),
-                    new Float(width/2),new Float(height/2)));
+            case "circle": coordinates = new ArrayList<>(Arrays.asList((float) width/2,(float) (2*height)/4,
+                    (float) width/2, (float) height/2));
                 break;
-            case "arc": coordinates = new ArrayList<Float>(Arrays.asList(new Float(width/2),new Float((2*height)/4),
-                    new Float(width/2),new Float(height/2)));
+            case "arc": coordinates = new ArrayList<>(Arrays.asList((float) width/2,(float) (2*height)/4,
+                    (float) width/2,(float) height/2));
+                break;
+            case "rectangle": coordinates = new ArrayList<>(Arrays.asList((float) width/4, (float) height/4,
+                    (float) width/2, (float) height/3));
+                break;
+            case "square": coordinates = new ArrayList<>(Arrays.asList((float) width/4, (float) height/4,
+                    (float) height/2, (float) height/2));
                 break;
             default: coordinates = new ArrayList<>();
                 break;
